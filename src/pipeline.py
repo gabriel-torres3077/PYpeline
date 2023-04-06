@@ -15,7 +15,7 @@ from selenium.webdriver.support import expected_conditions as EC
 #SETUP
 
 URL = 'https://dados.gov.br/dados/conjuntos-dados/cadastro-nacional-da-pessoa-jurdica---cnpj'
-BASE_DIR = f'{os.getcwd()}\src'
+BASE_DIR = f'{os.getcwd()}'
 DOWNLOAD_PATH = f'{BASE_DIR}\estabelecimentos'
 DATA_PATH =  f'{BASE_DIR}\dados'
 DATA_MODEL = [

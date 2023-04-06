@@ -27,6 +27,11 @@
 
 - Execute o script [export.py](./src/export.py) para exportar os dados requisitados em csv e xlsx
 
+
+## Preview
+
+[Watch the video](./prev/preview.mkv)
+
 ## Observações gerais
 
 - Caso algum bug seja encontrado, por favor me informe para que seja feita a correção imediata

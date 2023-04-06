@@ -4,14 +4,15 @@ import os
 import pandas as pd
 
 collection = utils.collection
-BASE_DIR = f'{os.getcwd()}\src'
+BASE_DIR = os.getcwd()
 STATS_PATH =  f'{BASE_DIR}\estatisticas'
 
 def get_ativos():
     total_entries = collection.count_documents({})
     actives = collection.count_documents({"SITUAÇÃO_CADASTRAL": "02"})
-    active_users = round(((actives * 100) / total_entries), 2)
-    return active_users
+    percentace = round(((actives * 100) / total_entries), 2)
+    cnpjs = [total_entries, actives, percentace]
+    return cnpjs
 
 def list_restaurants():
     pipeline = [
@@ -30,13 +31,13 @@ def list_restaurants():
 
 def main():
 
-    actives = get_ativos()
+    cnpjs = get_ativos()
     restaurants = list_restaurants()
     # Write cnpj
     with open(f'{STATS_PATH}\CNPJ_ativos.csv', 'w', encoding='UTF8', newline='') as f:
         writer = csv.writer(f)
-        writer.writerow(['CNPJ ATIVOS'])
-        writer.writerow([actives])
+        writer.writerow(['Quantidade de CNPJ', 'CNPJ ATIVOS', '% CNPJ ATIVOS'])
+        writer.writerow([cnpjs[0], cnpjs[1],  cnpjs[2]])
         f.close()
     
     # Write List
