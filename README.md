@@ -30,7 +30,7 @@
 
 ## Preview
 
-[Watch the video](./prev/preview.mkv)
+[Assistir a prévia do projeto](./prev/preview.mkv)
 
 ## Observações gerais
 
